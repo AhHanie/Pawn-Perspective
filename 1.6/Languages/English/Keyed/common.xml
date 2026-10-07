@@ -2,4 +2,7 @@
 <LanguageData>
     <PawnPerspective.LoadingLabel>Loading Pawn Perspective ...</PawnPerspective.LoadingLabel>
     <PawnPerspective.RotatePortrait>Rotate portrait</PawnPerspective.RotatePortrait>
+    <PawnPerspective.Settings.Title>Pawn Perspective</PawnPerspective.Settings.Title>
+    <PawnPerspective.Settings.UseAlternativeButtonPosition>Use alternate rotate button position</PawnPerspective.Settings.UseAlternativeButtonPosition>
+    <PawnPerspective.Settings.UseAlternativeButtonPosition.Tooltip>Moves the rotate button to the other side of the pawn portrait if another mod uses its current position.</PawnPerspective.Settings.UseAlternativeButtonPosition.Tooltip>
 </LanguageData>

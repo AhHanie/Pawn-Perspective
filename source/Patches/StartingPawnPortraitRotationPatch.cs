@@ -9,14 +9,15 @@ namespace Pawn_Perspective.Patches
 {
     internal static class StartingPawnPortraitRotation
     {
-        private const float InfoButtonX = 304f;
-        private const float InfoButtonY = 3f;
-        private const float InfoButtonSize = 24f;
-        private const float IconButtonSize = 48f;
-        private const float IconButtonGap = 2f;
+        public static readonly float InfoButtonX = 304f;
+        public static readonly float InfoButtonY = 3f;
+        public static readonly float InfoButtonSize = 24f;
+        public static readonly float IconButtonSize = 48f;
+        public static readonly float IconButtonGap = 2f;
+        public static readonly float AlternativeButtonY = -9f;
 
-        private static Rot4 currentRotation = Rot4.South;
-        private static bool configureStartingPawnsOpen;
+        public static Rot4 currentRotation = Rot4.South;
+        public static bool configureStartingPawnsOpen;
 
         public static Rot4 CurrentRotation
         {
@@ -51,11 +52,23 @@ namespace Pawn_Perspective.Patches
 
         public static void DrawControl(Rect creationRect)
         {
-            Rect buttonRect = new Rect(
-                creationRect.x + InfoButtonX + InfoButtonSize + IconButtonGap,
-                creationRect.y + InfoButtonY + (InfoButtonSize - IconButtonSize) / 2f,
-                IconButtonSize,
-                IconButtonSize);
+            Rect buttonRect;
+            if (ModSettings.useAlternativeButtonPosition)
+            {
+                buttonRect = new Rect(
+                    creationRect.center.x + StartingPawnUtility.PawnPortraitSize.x / 2f + IconButtonGap,
+                    creationRect.y + AlternativeButtonY,
+                    IconButtonSize,
+                    IconButtonSize);
+            }
+            else
+            {
+                buttonRect = new Rect(
+                    creationRect.x + InfoButtonX + InfoButtonSize + IconButtonGap,
+                    creationRect.y + InfoButtonY + (InfoButtonSize - IconButtonSize) / 2f,
+                    IconButtonSize,
+                    IconButtonSize);
+            }
 
             if (Widgets.ButtonImage(buttonRect, Mod.rotateButtonTex.Texture, true, "PawnPerspective.RotatePortrait".Translate()))
             {
