@@ -5,9 +5,10 @@
     <packageId>sk.pawnperspective</packageId>
     <supportedVersions>
         <li>1.6</li>
+        <li>1.7</li>
     </supportedVersions>
     <description>Allows rotating pawns during the pawn generation screen before starting a game.</description>
-    <modVersion>1.1.0</modVersion>
+    <modVersion>1.2.0</modVersion>
     <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3718719179</url>
     <modDependencies>
         <li>
